@@ -1,0 +1,131 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$light-grey: #777;
+$dark-grey: #555;
+$v-dark-grey: #222;
+$red: #d61313;
+
+
+body {
+  padding-top: 140px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $light-grey;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+.container {
+  position: relative;
+}
+
+.center {
+  text-align: center;
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+}
+
+#railslogo{
+  float:left;
+  padding: 5px 10px 5px 0;
+}
+
+#logo{
+  float: left;
+  margin-right: 10px;
+  margin-top: 76px;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding-top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover{
+    color: $red;
+  }
+}
+
+header nav{
+  margin-top: 76px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: $light-grey;
+  
+  &:hover{
+    color: $red;
+  }
+  
+}
+
+/* Giant absolutely positioned ruby for funsies */
+
+.railsruby {
+  position: absolute;
+  left: 80%;
+  top: 40%;
+}
+
+/* footer */
+footer {
+  margin-top: 45px;
+  padding-top: 10px;
+  border-top: 1px solid #eaeaea;
+  color: $light-grey;
+  
+  a{
+    color: $dark-grey;
+    
+    &:hover{
+      color: $v-dark-grey;
+    }
+    
+  }
+  
+  small{
+    float: left;
+  }
+  
+  ul{
+    float: right;
+    list-style: none;
+    li{
+      float: left;
+      margin-left: 15px;
+    }
+  }
+  
+}
