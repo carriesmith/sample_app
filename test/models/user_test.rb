@@ -64,6 +64,4 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?, "duplicate -- email address already exists in database"
   end
 
-
-
 end
