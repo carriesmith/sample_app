@@ -65,4 +65,9 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?, "duplicate -- email address already exists in database"
   end
 
+  test "password minimum length 6 characters" do
+    @user.password = @user.password_confirmation = "x" * 5
+    assert_not @user.valid?
+  end
+
 end
