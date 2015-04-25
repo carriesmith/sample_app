@@ -20,5 +20,11 @@
   
     <%= render "layouts/footer" %>
   
+  <!-- include only when running in development server --> 
+  <div class="debug-dump">   
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+
+
   </body>
 </html>
