@@ -16,7 +16,10 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert flash.empty? # ASSERT: Error not displayed on new screen
   end
 
-  test "login with valid information" do
+  # bundle exec rake test TEST=test/integration/users_login_test.rb \TESTOPTS="--name test_login_with_valid_information"
+
+  test "login with valid information then log out" do
+    # Log in
     get login_path
     post login_path, session: { email: @user.email, password: 'password' }
     assert_redirected_to @user
@@ -25,6 +28,15 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", login_path, count: 0
     assert_select "a[href=?]", logout_path
     assert_select "a[href=?]", user_path(@user)
+
+    # Log out
+    delete logout_path
+    assert_redirected_to root_url, "redirect"
+    follow_redirect!
+    assert_template 'static_pages/home', "static_pages/home"
+    assert_select "a[href=?]", login_path
+    assert_select "a[href=?]", logout_path, count: 0
+    assert_select "a[href=?]", user_path(@user), count: 0
   end
 
 end

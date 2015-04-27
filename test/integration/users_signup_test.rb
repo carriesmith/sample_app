@@ -28,6 +28,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/show'
     assert_not flash.nil?, "valid sign in should not prompt error flash"
+    assert is_logged_in? # method defined test_helper.rb
   end
 
 end
