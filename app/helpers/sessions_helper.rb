@@ -25,9 +25,14 @@ module SessionsHelper
     end
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
+  # THIS errant little piece of code was breaking my whole
+  # "remember me" checkbox. I found it and I silenced it.
+  # I leave it here as a warning to the others.
+  # Do _not_ fuck with me.
+
+  # def current_user
+  #   @current_user ||= User.find_by(id: session[:user_id])
+  # end
 
   def logged_in?
     !current_user.nil?
