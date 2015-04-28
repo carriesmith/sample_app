@@ -41,7 +41,15 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     # Simulate user then hitting logout in another tab
     delete logout_path
     assert_redirected_to root_url, "redirect"
+  end # END test "login with valid information then log out"
 
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_not_nil cookies['remember_token']
   end
 
+  test "login without remembering" do
+    log_in_as(@user, remember_me: '0')
+    assert_nil cookies['remember_token']
+  end 
 end
