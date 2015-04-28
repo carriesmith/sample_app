@@ -11,3 +11,4 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 * Listing 6.28 what are "fixtures"?
 * Do 6.5 exercises
 * Review users_signup_test.rb and Listing 7.26, esp. post_via_redirect users_path vs post users_path
+* Go all the way through Chapter 8 again. Complete Chapter 8 exercises.
